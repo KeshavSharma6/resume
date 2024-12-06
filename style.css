@@ -3,7 +3,9 @@ body {
     font-size: 12px;
     max-width: 960px;
     margin: auto;
+    padding: 0 1em; /* Add padding for smaller screens */
 }
+
 h1 {
     font-size: 3em;
     letter-spacing: .6em;
@@ -20,38 +22,76 @@ h3 {
     font-size: 1em;
     padding-bottom: 1em;
 }
- main { 
-        display: grid;
-        grid-template-columns: 40% 60%;
-        margin-top: 3em;
+
+main {
+    display: grid;
+    grid-template-columns: 40% 60%; /* Two columns by default */
+    margin-top: 3em;
+    gap: 1em; /* Add gap between columns */
+}
+
+header {
+    text-align: center;
+    margin: auto 2em;
+}
+
+section {
+    margin: auto 1em 4em 2em;
+}
+
+i {
+    margin-right: .5em;
+}
+
+p {
+    margin: .2em auto;
+}
+
+hr {
+    border: none;
+    background-color: lightgray;
+    height: 1px;
+}
+
+h1, h2, h3 {
+    font-weight: 100;
+    margin-bottom: 0;
+}
+
+#mainLeft {
+    border-right: 1px solid lightgray;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        margin-top: 2em;
     }
-    header {
-        text-align: center;
-        margin: auto 2em;
+    h1 {
+        font-size: 2em; /* Adjust heading size */
+        letter-spacing: .3em;
     }
-    
+    h2 {
+        font-size: 1.2em;
+    }
+    h3 {
+        font-size: 0.9em;
+    }
     section {
-        margin: auto 1em 4em 2em;
-    }
-    
-    i {
-        margin-right: .5em;
-    }
-    
-    p {
-        margin: .2em auto
-    }
-    
-    hr {
-        border: none;
-        background-color: lightgray;
-        height: 1px;
-    }
-    
-    h1, h2, h3 {
-        font-weight: 100;
-        margin-bottom: 0;
+        margin: auto 1em 2em;
     }
     #mainLeft {
-        border-right: 1px solid lightgray;
+        border-right: none; /* Remove border for stacked layout */
     }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 10px; /* Smaller font size for very small screens */
+    }
+    h1 {
+        font-size: 1.5em;
+        letter-spacing: .2em;
+    }
+}
